@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map and Guide Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    nav {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section {
+      display: none;
+      margin-top: 30px;
+    }
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showSection('map')">Map</a>
+    <a onclick="showSection('guide')">Guide</a>
+  </nav>
+
+  <section id="map" class="active">
+    <h2>Map</h2>
+    <p>This is the map section. You can add your map or image here.</p>
+  </section>
+
+  <section id="guide">
+    <h2>Guide</h2>
+    <p>This is the guide section. Include instructions, descriptions, or tips here.</p>
+  </section>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
